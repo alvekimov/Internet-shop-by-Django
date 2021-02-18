@@ -2,8 +2,11 @@
     "python.pythonPath": "/home/alv/Desktop/djangoBasic/venv/bin/python",
     "python.languageServer": "Pylance",
     "python.experiments.optOutFrom": ["All"],
+<<<<<<< HEAD
     "python.formatting.provider": "black",
     "python.formatting.blackArgs": [
         "-l 120"
     ]
+=======
+>>>>>>> master
 }
