@@ -1,0 +1,9 @@
+{
+    "python.pythonPath": "/home/alv/Desktop/djangoBasic/venv/bin/python",
+    "python.languageServer": "Pylance",
+    "python.experiments.optOutFrom": ["All"],
+    "python.formatting.provider": "black",
+    "python.formatting.blackArgs": [
+        "-l 120"
+    ]
+}
