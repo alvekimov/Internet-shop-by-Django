@@ -1,12 +1,10 @@
 {
-    "python.pythonPath": "/home/alv/Desktop/djangoBasic/venv/bin/python",
+    "python.pythonPath": "/home/alv/.pyenv/versions/3.8.6/envs/geekshop/bin/python",
     "python.languageServer": "Pylance",
     "python.experiments.optOutFrom": ["All"],
-<<<<<<< HEAD
     "python.formatting.provider": "black",
     "python.formatting.blackArgs": [
         "-l 120"
     ]
-=======
->>>>>>> master
+
 }
