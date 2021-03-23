@@ -19,23 +19,51 @@ class Migration(migrations.Migration):
             model_name="shopuser",
             name="activation_key_expires",
             field=models.DateTimeField(
-                default=datetime.datetime(2021, 3, 11, 16, 57, 24, 883929, tzinfo=utc),
+                default=datetime.datetime(
+                    2021, 3, 11, 16, 57, 24, 883929, tzinfo=utc
+                ),
                 verbose_name="актуальность ключа",
             ),
         ),
         migrations.CreateModel(
             name="ShopUserProfile",
             fields=[
-                ("id", models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name="ID")),
-                ("tagline", models.CharField(blank=True, max_length=128, verbose_name="теги")),
-                ("aboutMe", models.TextField(blank=True, max_length=512, verbose_name="о себе")),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "tagline",
+                    models.CharField(
+                        blank=True, max_length=128, verbose_name="теги"
+                    ),
+                ),
+                (
+                    "aboutMe",
+                    models.TextField(
+                        blank=True, max_length=512, verbose_name="о себе"
+                    ),
+                ),
                 (
                     "gender",
-                    models.CharField(blank=True, choices=[("M", "М"), ("W", "Ж")], max_length=1, verbose_name="пол"),
+                    models.CharField(
+                        blank=True,
+                        choices=[("M", "М"), ("W", "Ж")],
+                        max_length=1,
+                        verbose_name="пол",
+                    ),
                 ),
                 (
                     "user",
-                    models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL),
+                    models.OneToOneField(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to=settings.AUTH_USER_MODEL,
+                    ),
                 ),
             ],
         ),

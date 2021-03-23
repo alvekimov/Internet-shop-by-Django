@@ -18,9 +18,27 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name="Order",
             fields=[
-                ("id", models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name="ID")),
-                ("created", models.DateTimeField(auto_now_add=True, verbose_name="создан")),
-                ("updated", models.DateTimeField(auto_now=True, verbose_name="обновлен")),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "created",
+                    models.DateTimeField(
+                        auto_now_add=True, verbose_name="создан"
+                    ),
+                ),
+                (
+                    "updated",
+                    models.DateTimeField(
+                        auto_now=True, verbose_name="обновлен"
+                    ),
+                ),
                 (
                     "status",
                     models.CharField(
@@ -37,8 +55,17 @@ class Migration(migrations.Migration):
                         verbose_name="статус",
                     ),
                 ),
-                ("is_active", models.BooleanField(default=True, verbose_name="активен")),
-                ("user", models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
+                (
+                    "is_active",
+                    models.BooleanField(default=True, verbose_name="активен"),
+                ),
+                (
+                    "user",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to=settings.AUTH_USER_MODEL,
+                    ),
+                ),
             ],
             options={
                 "verbose_name": "заказ",
@@ -49,18 +76,35 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name="OrderItem",
             fields=[
-                ("id", models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name="ID")),
-                ("quantity", models.PositiveIntegerField(default=0, verbose_name="количество")),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "quantity",
+                    models.PositiveIntegerField(
+                        default=0, verbose_name="количество"
+                    ),
+                ),
                 (
                     "order",
                     models.ForeignKey(
-                        on_delete=django.db.models.deletion.CASCADE, related_name="orderitems", to="ordersapp.Order"
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="orderitems",
+                        to="ordersapp.Order",
                     ),
                 ),
                 (
                     "product",
                     models.ForeignKey(
-                        on_delete=django.db.models.deletion.CASCADE, to="mainapp.Product", verbose_name="продукт"
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to="mainapp.Product",
+                        verbose_name="продукт",
                     ),
                 ),
             ],

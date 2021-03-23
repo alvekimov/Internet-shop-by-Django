@@ -20,7 +20,11 @@ def save_user_profile(backend, user, response, *args, **kwargs):
             "/method/users.get",
             None,
             urlencode(
-                OrderedDict(fields=",".join(("bdate", "sex", "about")), access_token=response["access_token"], v="5.92")
+                OrderedDict(
+                    fields=",".join(("bdate", "sex", "about")),
+                    access_token=response["access_token"],
+                    v="5.92",
+                )
             ),
             None,
         )
@@ -32,7 +36,9 @@ def save_user_profile(backend, user, response, *args, **kwargs):
 
     data = resp.json()["response"][0]
     if data["sex"]:
-        user.shopuserprofile.gender = ShopUserProfile.MALE if data["sex"] == 2 else ShopUserProfile.FEMALE
+        user.shopuserprofile.gender = (
+            ShopUserProfile.MALE if data["sex"] == 2 else ShopUserProfile.FEMALE
+        )
 
     if data["about"]:
         user.shopuserprofile.aboutMe = data["about"]

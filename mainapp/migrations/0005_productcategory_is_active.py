@@ -13,6 +13,8 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name="productcategory",
             name="is_active",
-            field=models.BooleanField(default=True, verbose_name="категория активна"),
+            field=models.BooleanField(
+                default=True, verbose_name="категория активна"
+            ),
         ),
     ]

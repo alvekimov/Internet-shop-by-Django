@@ -16,13 +16,18 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name="shopuser",
             name="activation_key",
-            field=models.CharField(blank=True, max_length=128, verbose_name="ключ подтверждения"),
+            field=models.CharField(
+                blank=True, max_length=128, verbose_name="ключ подтверждения"
+            ),
         ),
         migrations.AddField(
             model_name="shopuser",
             name="activation_key_expires",
             field=models.DateTimeField(
-                default=datetime.datetime(2021, 3, 10, 8, 50, 45, 156407, tzinfo=utc), verbose_name="актуальность ключа"
+                default=datetime.datetime(
+                    2021, 3, 10, 8, 50, 45, 156407, tzinfo=utc
+                ),
+                verbose_name="актуальность ключа",
             ),
         ),
     ]
