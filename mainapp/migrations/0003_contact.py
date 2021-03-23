@@ -24,21 +24,15 @@ class Migration(migrations.Migration):
                 ),
                 (
                     "phone",
-                    models.CharField(
-                        max_length=50, verbose_name="номер телефона"
-                    ),
+                    models.CharField(max_length=50, verbose_name="номер телефона"),
                 ),
                 (
                     "email",
-                    models.EmailField(
-                        max_length=254, verbose_name="электронная почта"
-                    ),
+                    models.EmailField(max_length=254, verbose_name="электронная почта"),
                 ),
                 (
                     "city",
-                    models.CharField(
-                        default="Москва", max_length=128, verbose_name="город"
-                    ),
+                    models.CharField(default="Москва", max_length=128, verbose_name="город"),
                 ),
                 (
                     "address",

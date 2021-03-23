@@ -10,9 +10,7 @@ from .models import Contact, Product, ProductCategory
 
 def main(request):
     title = "главная"
-    products = Product.objects.filter(is_active=True, category__is_active=True)[
-        :3
-    ]
+    products = Product.objects.filter(is_active=True, category__is_active=True)[:3]
     content = {
         "title": title,
         "products": products,
@@ -32,9 +30,7 @@ def main(request):
 
 
 def get_hot_product_list():
-    products = Product.objects.filter(
-        is_active=True, category__is_active=True
-    ).select_related("category")
+    products = Product.objects.filter(is_active=True, category__is_active=True).select_related("category")
     hot_product = random.sample(list(products), 1)[0]
     hot_list = products.exclude(pk=hot_product.pk)[:3]
     return (hot_product, hot_list)
@@ -47,14 +43,12 @@ def products(request, pk=None, page=1):
     if pk is not None:
         if str(pk) == str(0):
             category = {"pk": 0, "name": "все"}
-            products = Product.objects.filter(
-                is_active=True, category__is_active=True
-            ).order_by("price")
+            products = Product.objects.filter(is_active=True, category__is_active=True).order_by("price")
         else:
             category = get_object_or_404(ProductCategory, pk=pk)
-            products = Product.objects.filter(
-                category__pk=pk, is_active=True, category__is_active=True
-            ).order_by("price")
+            products = Product.objects.filter(category__pk=pk, is_active=True, category__is_active=True).order_by(
+                "price"
+            )
 
         paginator = Paginator(products, 2)
         try:

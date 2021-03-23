@@ -29,15 +29,11 @@ class Migration(migrations.Migration):
                 ),
                 (
                     "quantity",
-                    models.PositiveIntegerField(
-                        default=0, verbose_name="количество"
-                    ),
+                    models.PositiveIntegerField(default=0, verbose_name="количество"),
                 ),
                 (
                     "add_datetime",
-                    models.DateTimeField(
-                        auto_now_add=True, verbose_name="время добавления"
-                    ),
+                    models.DateTimeField(auto_now_add=True, verbose_name="время добавления"),
                 ),
                 (
                     "product",

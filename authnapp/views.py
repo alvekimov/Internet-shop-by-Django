@@ -5,12 +5,7 @@ from django.db import transaction
 from django.shortcuts import HttpResponseRedirect, render
 from django.urls import reverse
 
-from authnapp.forms import (
-    ShopUserEditForm,
-    ShopUserLoginForm,
-    ShopUserProfileEditForm,
-    ShopUserRegisterForm,
-)
+from authnapp.forms import ShopUserEditForm, ShopUserLoginForm, ShopUserProfileEditForm, ShopUserRegisterForm
 from authnapp.models import ShopUser
 
 
@@ -65,20 +60,14 @@ def edit(request):
     title = "редактирование"
 
     if request.method == "POST":
-        edit_form = ShopUserEditForm(
-            request.POST, request.FILES, instance=request.user
-        )
-        profile_form = ShopUserProfileEditForm(
-            request.POST, instance=request.user.shopuserprofile
-        )
+        edit_form = ShopUserEditForm(request.POST, request.FILES, instance=request.user)
+        profile_form = ShopUserProfileEditForm(request.POST, instance=request.user.shopuserprofile)
         if edit_form.is_valid() and profile_form.is_valid():
             edit_form.save()
             return HttpResponseRedirect(reverse("auth:edit"))
     else:
         edit_form = ShopUserEditForm(instance=request.user)
-        profile_form = ShopUserProfileEditForm(
-            instance=request.user.shopuserprofile
-        )
+        profile_form = ShopUserProfileEditForm(instance=request.user.shopuserprofile)
 
     content = {
         "title": title,
@@ -111,10 +100,7 @@ def send_verify_mail(user):
 def verify(request, email, activation_key):
     try:
         user = ShopUser.objects.get(email=email)
-        if (
-            user.activation_key == activation_key
-            and not user.is_activation_key_expired()
-        ):
+        if user.activation_key == activation_key and not user.is_activation_key_expired():
             print(f"user {user} is activated")
             user.is_active = True
             user.save()

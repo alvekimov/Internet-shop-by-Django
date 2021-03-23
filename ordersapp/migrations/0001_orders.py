@@ -29,15 +29,11 @@ class Migration(migrations.Migration):
                 ),
                 (
                     "created",
-                    models.DateTimeField(
-                        auto_now_add=True, verbose_name="создан"
-                    ),
+                    models.DateTimeField(auto_now_add=True, verbose_name="создан"),
                 ),
                 (
                     "updated",
-                    models.DateTimeField(
-                        auto_now=True, verbose_name="обновлен"
-                    ),
+                    models.DateTimeField(auto_now=True, verbose_name="обновлен"),
                 ),
                 (
                     "status",
@@ -87,9 +83,7 @@ class Migration(migrations.Migration):
                 ),
                 (
                     "quantity",
-                    models.PositiveIntegerField(
-                        default=0, verbose_name="количество"
-                    ),
+                    models.PositiveIntegerField(default=0, verbose_name="количество"),
                 ),
                 (
                     "order",

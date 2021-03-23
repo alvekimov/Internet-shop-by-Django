@@ -25,9 +25,7 @@ class Migration(migrations.Migration):
                 ),
                 (
                     "name",
-                    models.CharField(
-                        max_length=128, verbose_name="имя продукта"
-                    ),
+                    models.CharField(max_length=128, verbose_name="имя продукта"),
                 ),
                 (
                     "image",
@@ -43,9 +41,7 @@ class Migration(migrations.Migration):
                 ),
                 (
                     "description",
-                    models.TextField(
-                        blank=True, verbose_name="описание продукта"
-                    ),
+                    models.TextField(blank=True, verbose_name="описание продукта"),
                 ),
                 (
                     "price",
@@ -58,9 +54,7 @@ class Migration(migrations.Migration):
                 ),
                 (
                     "quantity",
-                    models.PositiveIntegerField(
-                        default=0, verbose_name="количество на складе"
-                    ),
+                    models.PositiveIntegerField(default=0, verbose_name="количество на складе"),
                 ),
                 (
                     "category",

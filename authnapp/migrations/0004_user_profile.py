@@ -19,9 +19,7 @@ class Migration(migrations.Migration):
             model_name="shopuser",
             name="activation_key_expires",
             field=models.DateTimeField(
-                default=datetime.datetime(
-                    2021, 3, 11, 16, 57, 24, 883929, tzinfo=utc
-                ),
+                default=datetime.datetime(2021, 3, 11, 16, 57, 24, 883929, tzinfo=utc),
                 verbose_name="актуальность ключа",
             ),
         ),
@@ -39,15 +37,11 @@ class Migration(migrations.Migration):
                 ),
                 (
                     "tagline",
-                    models.CharField(
-                        blank=True, max_length=128, verbose_name="теги"
-                    ),
+                    models.CharField(blank=True, max_length=128, verbose_name="теги"),
                 ),
                 (
                     "aboutMe",
-                    models.TextField(
-                        blank=True, max_length=512, verbose_name="о себе"
-                    ),
+                    models.TextField(blank=True, max_length=512, verbose_name="о себе"),
                 ),
                 (
                     "gender",

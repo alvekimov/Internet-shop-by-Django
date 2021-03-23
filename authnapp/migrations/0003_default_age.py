@@ -17,17 +17,13 @@ class Migration(migrations.Migration):
             model_name="shopuser",
             name="activation_key_expires",
             field=models.DateTimeField(
-                default=datetime.datetime(
-                    2021, 3, 11, 16, 34, 7, 867034, tzinfo=utc
-                ),
+                default=datetime.datetime(2021, 3, 11, 16, 34, 7, 867034, tzinfo=utc),
                 verbose_name="актуальность ключа",
             ),
         ),
         migrations.AlterField(
             model_name="shopuser",
             name="age",
-            field=models.PositiveIntegerField(
-                default=18, verbose_name="возраст"
-            ),
+            field=models.PositiveIntegerField(default=18, verbose_name="возраст"),
         ),
     ]
