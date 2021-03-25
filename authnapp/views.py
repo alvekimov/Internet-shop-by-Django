@@ -55,6 +55,10 @@ def register(request):
     return render(request, "authnapp/register.html", content)
 
 
+from django.contrib.auth.decorators import login_required
+
+
+@login_required
 @transaction.atomic
 def edit(request):
     title = "редактирование"
@@ -69,12 +73,7 @@ def edit(request):
         edit_form = ShopUserEditForm(instance=request.user)
         profile_form = ShopUserProfileEditForm(instance=request.user.shopuserprofile)
 
-    content = {
-        "title": title,
-        "edit_form": edit_form,
-        "profile_form": profile_form,
-        "media_url": settings.MEDIA_URL,
-    }
+    content = {"title": title, "edit_form": edit_form, "profile_form": profile_form, "media_url": settings.MEDIA_URL}
 
     return render(request, "authnapp/edit.html", content)
 
