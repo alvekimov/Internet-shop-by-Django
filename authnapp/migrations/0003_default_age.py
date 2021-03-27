@@ -17,7 +17,8 @@ class Migration(migrations.Migration):
             model_name="shopuser",
             name="activation_key_expires",
             field=models.DateTimeField(
-                default=datetime.datetime(2021, 3, 11, 16, 34, 7, 867034, tzinfo=utc), verbose_name="актуальность ключа"
+                default=datetime.datetime(2021, 3, 11, 16, 34, 7, 867034, tzinfo=utc),
+                verbose_name="актуальность ключа",
             ),
         ),
         migrations.AlterField(

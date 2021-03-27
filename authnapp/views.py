@@ -55,6 +55,10 @@ def register(request):
     return render(request, "authnapp/register.html", content)
 
 
+from django.contrib.auth.decorators import login_required
+
+
+@login_required
 @transaction.atomic
 def edit(request):
     title = "редактирование"
@@ -99,7 +103,11 @@ def verify(request, email, activation_key):
             print(f"user {user} is activated")
             user.is_active = True
             user.save()
-            auth.login(request, user, backend="django.contrib.auth.backends.ModelBackend")
+            auth.login(
+                request,
+                user,
+                backend="django.contrib.auth.backends.ModelBackend",
+            )
 
             return render(request, "authnapp/verification.html")
         print(f"error activation user: {user}")
