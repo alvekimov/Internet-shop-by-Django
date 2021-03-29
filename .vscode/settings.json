@@ -1,5 +1,5 @@
 {
-    "python.pythonPath": "/home/alv/.pyenv/versions/3.8.6/envs/geekshop/bin/python",
+    "python.pythonPath": "/home/django/venv/bin/python",
     "python.languageServer": "Pylance",
     "python.experiments.optOutFrom": ["All"],
     "python.formatting.provider": "black",
